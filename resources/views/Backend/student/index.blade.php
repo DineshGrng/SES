@@ -5,6 +5,7 @@
                <div>
                 <span>
                     <h1>Student Details</h1>
+                    {{-- {{ $students }} --}}
                 </span>
                </div>
                <div>
@@ -19,8 +20,24 @@
                         <th>phone</th>
                         <th>status</th>
                         <th>remarks</th>
+                        <th>Created_at</th>
+                        <th>update_at</th>
                         <th>Actions</th>
                     </tr>
+                    @foreach ($students as $student)
+                        <tr>
+                            <td>{{ $student->id }}</td>
+                            <td>{{ $student->name }}</td>
+                            <td>{{ $student->phone }}</td>
+                            <td></td>
+                            <td>{{ $student->remarks }}</td>
+                            <td>{{ $student->created_at }}</td>
+                            <td>{{ $student->updated_at }}</td>
+                            <td>
+                                <a href="{{ route('student.edit',$student->id) }}" class="btn btn-primary btn-sm">edit</a>
+                            </td>
+                        </tr>
+                    @endforeach
                 </table>
             </div>
         </div>

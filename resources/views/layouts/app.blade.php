@@ -174,8 +174,8 @@
           </li>
         </ul>
       </nav>
-      <!-- main side bar -->
-      <x-sidebar/>
+       <!-- main side bar -->
+     <x-sidebar/>
       <!-- Main Content -->
       <div class="main-content">
         {{ $slot }}

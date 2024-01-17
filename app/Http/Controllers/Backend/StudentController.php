@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Student;
 use Illuminate\Http\Request;
 
 class StudentController extends Controller
@@ -12,7 +13,8 @@ class StudentController extends Controller
      */
     public function index()
     {
-        return view('Backend.student.index');
+        $students = Student::all();
+        return view('Backend.student.index', compact('students'));
     }
 
     /**
@@ -29,7 +31,19 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // $student = new Student();
+        // $student->name =  $request->name;
+        // $student->email =  $request->email;
+        // $student->phone =  $request->phone;
+        // $student->course =  $request->course;
+        // $student->school =  $request->school;
+        // $student->remarks =  $request->remarks;
+        // $student->save();
+        // return redirect()->back();
+       $student = new Student();
+       $student->create($request->all());
+       return redirect()->back();
+
     }
 
     /**
@@ -45,7 +59,8 @@ class StudentController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $student = Student::find($id);
+        return view('Backend.student.edit',compact('student'));
     }
 
     /**
@@ -53,7 +68,14 @@ class StudentController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        // $student = new Student();
+        // $student->create($request->all());
+        // return redirect()->back();
+        $student = Student::find($id);
+        $student->update($request->all());
+        return redirect()->back();
+
+
     }
 
     /**
