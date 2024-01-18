@@ -36,6 +36,15 @@
                         <input id="email" class="form-control" type="email" name="email" value="{{ $student->email }}">
                     </div>
                     <div class="form-group">
+                        <label for="status">Select</label>
+                        <select id="status" class="form-control" name="status">
+                            <option value="follow-up">Follow Up</option>
+                            <option value="phone-call">Phone Call</option>
+                            <option value="cancalled">Cancalled</option>
+                            <option value="enrolled">Enrolled</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
                         <label for="remarks"></label>
                         <textarea id="remarks" class="form-control" name="remarks" rows="3">{{ $student->remarks }}</textarea>
                     </div>

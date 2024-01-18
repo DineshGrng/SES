@@ -1,8 +1,13 @@
 <?php
+// use App\Http\Controllers\Backend\CourseController as BackendCourseController;
 
+use App\Http\Controllers\backend\CourseController;
 use App\Http\Controllers\Backend\StudentController as BackendStudentController;
+use App\Http\Controllers\Backend\TopicController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\StudentController;
+use Illuminate\Routing\Exceptions\BackedEnumCaseNotFoundException;
+// use App\Http\Controllers\courseController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,6 +34,8 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::resource('student', BackendStudentController::class)->names('student');
+    Route::resource('course', CourseController::class)->names('course');
+
 });
 
 require __DIR__.'/auth.php';

@@ -29,7 +29,21 @@
                             <td>{{ $student->id }}</td>
                             <td>{{ $student->name }}</td>
                             <td>{{ $student->phone }}</td>
-                            <td></td>
+                            <td>
+                               @if ( $student->status == 'cancalled')
+                               <span class="badge bg-danger text-white" >{{ $student->status }}</span>
+
+                               @elseif($student->status == 'enrolled')
+                               <span class="badge bg-success text-white">{{ $student->status }}</span>
+
+                               @elseif($student->status == 'phone-call')
+                               <span class="badge bg-primary text-white">{{ $student->status }}</span>
+
+                               @else
+                               <span class="badge bg-warning text-white">{{ $student->status }}</span>
+
+                               @endif
+                            </td>
                             <td>{{ $student->remarks }}</td>
                             <td>{{ $student->created_at }}</td>
                             <td>{{ $student->updated_at }}</td>

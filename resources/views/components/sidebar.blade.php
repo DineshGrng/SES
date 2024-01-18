@@ -14,7 +14,7 @@
             <a href="{{ route('student.index') }}" class="nav-link"><i data-feather="users"></i><span>Student</span></a>
           </li>
           <li class="dropdown ">
-            <a href="index.html" class="nav-link"><i data-feather="book-open"></i><span>Course</span></a>
+            <a href="{{ route('course.index') }}" class="nav-link"><i data-feather="book-open"></i><span>Course</span></a>
           </li>
       </ul>
     </aside>
